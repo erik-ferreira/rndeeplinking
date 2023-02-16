@@ -1,13 +1,15 @@
+import { createURL, useURL } from "expo-linking";
 import { StyleSheet, Text, View } from "react-native";
-import { createURL } from "expo-linking";
 
 export default function App() {
+  const redirectURL = useURL();
+
   const url = createURL("product", {});
   console.log("URL => ", url);
 
   return (
     <View style={styles.container}>
-      <Text>Hello guys!</Text>
+      <Text>URL - {redirectURL}</Text>
     </View>
   );
 }

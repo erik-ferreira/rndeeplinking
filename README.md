@@ -19,4 +19,25 @@ const redirectURL = useURL();
 // o useURL me devolve a url que foi usada para entrar dentro do app
 ```
 
-`npx uri-scheme open url_to_redirect --android` - Comando para abrir diretamente o app, estando aberto ou não
+`npx uri-scheme open url_to_redirect --android` - Comando para abrir diretamente o app, estando aberto ou não. `url_to_redirect = exp://192.168.1.9:19000/--/`
+
+## Conectando o Deep Linking com o React Navigation
+
+```js
+const linking = {
+  prefixes: ["exp://192.168.1.9:19000/--/rndeeplinking/product"],
+  config: {
+    screens: {
+      home: {
+        path: "home",
+      },
+      product: {
+        path: "product",
+      },
+    },
+  },
+};
+
+// Passo essa const linking para o NavigationContainer como propriedade
+// O rndeeplinking é o scheme do meu app, e o product é a minha página
+```

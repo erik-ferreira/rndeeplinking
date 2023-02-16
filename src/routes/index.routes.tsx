@@ -10,7 +10,10 @@ const linking = {
         path: "home",
       },
       product: {
-        path: "product",
+        path: "product/:id",
+        parse: {
+          id: (id: string) => id,
+        },
       },
     },
   },
